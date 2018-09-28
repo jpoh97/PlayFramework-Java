@@ -6,6 +6,7 @@ import application.usecases.EnterTenant;
 import application.usecases.EvictTenant;
 import application.usecases.GetBuilding;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.exception.BaseException;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -14,6 +15,7 @@ import play.mvc.Results;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -34,14 +36,14 @@ public class BuildingAttendantRestController extends Controller {
     }
 
     public CompletionStage<Result> index() {
-        return CompletableFuture.completedFuture(ok("U can do it Jp c:"));
+        return CompletableFuture.completedFuture(ok("42"));
     }
 
     public CompletionStage<Result> getById(String buildingId) throws BaseException {
         return CompletableFuture.completedFuture(ok(Json.toJson(getBuilding.execute(buildingId))));
     }
 
-    public CompletionStage<Result> enterTenant() throws BaseException {
+    public CompletionStage<Result> enterTenant() throws BaseException, IOException {
         JsonNode json = request().body().asJson();
         EnterTenantRequest enterTenantRequest = EnterTenantRequest.of(
                 json.get("buildingId").asText(),

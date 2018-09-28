@@ -20,7 +20,7 @@ public class JdbcBuildingRepository implements BuildingRepository {
     private DBI dbi;
     private  DatabaseExecutionContext executionContext;
 
-    /*@Inject
+    @Inject
     public JdbcBuildingRepository(DatabaseExecutionContext executionContext) {
         this.executionContext = executionContext;
         DataSource ds = JdbcConnectionPool.create("jdbc:h2:mem:test",
@@ -31,7 +31,7 @@ public class JdbcBuildingRepository implements BuildingRepository {
         try (BuildingDao dao = dbi.open(BuildingDao.class)) {
             dao.createBuildingTable();
         }
-    }*/
+    }
 
     public Optional<Building> save(Building building) {
         final Optional<Building> byId = findById(building.getId());
