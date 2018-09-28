@@ -19,7 +19,7 @@
 #
 #-sbt-boot ~/.sbt/boot  
 
-# Path to local Ivy repository (default: ~/.ivy2)
+# Path to local Ivy domain.repository (default: ~/.ivy2)
 #
 #-ivy ~/.ivy2
 
