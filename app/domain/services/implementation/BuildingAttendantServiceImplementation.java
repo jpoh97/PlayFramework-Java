@@ -49,7 +49,7 @@ public class BuildingAttendantServiceImplementation implements BuildingAttendant
         /*for (BuildingAttendantValidation validation : entryValidations) {
             validation.execute(building.get());
         }*/
-        var tenant = Tenant.of(tenantId, tenantName, tenantAge, buildingCalendar.getCurrentDate());
+        Tenant tenant = Tenant.of(tenantId, tenantName, tenantAge, buildingCalendar.getCurrentDate());
         building.get().addTenant(tenant);
         return buildingRepository.save(building.get());
     }

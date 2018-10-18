@@ -28,6 +28,7 @@ libraryDependencies += "javax.transaction" % "javax.transaction-api" % "1.2"
 
 // Database
 libraryDependencies += javaJdbc
+libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.12"
 libraryDependencies += "org.jdbi" % "jdbi" % "2.78"
 libraryDependencies += "org.mongodb.morphia" % "morphia" % "1.3.2"
 libraryDependencies += "com.h2database" % "h2" % "1.4.197"

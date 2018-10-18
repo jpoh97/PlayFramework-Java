@@ -1,4 +1,4 @@
-package infrastructure.database.h2;
+package infrastructure.database;
 
 import akka.actor.ActorSystem;
 import scala.concurrent.ExecutionContext;

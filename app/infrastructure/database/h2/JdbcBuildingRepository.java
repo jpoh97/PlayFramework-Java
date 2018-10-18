@@ -3,6 +3,7 @@ package infrastructure.database.h2;
 import domain.entity.Building;
 import domain.entity.Tenant;
 import domain.repository.BuildingRepository;
+import infrastructure.database.DatabaseExecutionContext;
 import infrastructure.database.h2.jdbi.BuildingDao;
 import infrastructure.database.h2.jdbi.TenantDao;
 import org.h2.jdbcx.JdbcConnectionPool;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class JdbcBuildingRepository implements BuildingRepository {
 
     private DBI dbi;
-    private  DatabaseExecutionContext executionContext;
+    private DatabaseExecutionContext executionContext;
 
     @Inject
     public JdbcBuildingRepository(DatabaseExecutionContext executionContext) {
